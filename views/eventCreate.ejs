@@ -1,0 +1,77 @@
+
+<%- include ("./partials/messages"); %>
+<form action="/event/createEvent" method="post">
+    <fieldset>
+      <br><br>
+      <h3 align="center">Create Event</h3>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label mt-4">Title</label>
+        <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Venue">
+      </div>
+      <div class="form-group">
+        <label for="exampleTextarea" class="form-label mt-4">Description</label>
+        <textarea class="form-control" id="exampleTextarea" name="description" rows="3"></textarea>
+      </div>
+      <div class="w-25 d-flex p-1">
+        <h5 class="disply-5">From &nbsp;&nbsp;&nbsp;</h5>
+        <div class="input-group date">
+            <input type="date" class="form-control" name="from" id="birthdate">
+        </div>
+      </div>
+      <div class="w-25 d-flex p-1">
+        <h5 class="disply-5">To &nbsp;&nbsp;&nbsp;</h5>
+        <div class="input-group date">
+            <input type="date" class="form-control" name="to" id="birthdate">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label mt-4">Venue</label>
+        <input type="text" class="form-control" name="venue" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Venue">
+      </div>
+      <div class="w-25 d-flex p-1">
+        
+        <h5>Registration Last Date</h5>
+        <div class="input-group date">
+            <input type="date" class="form-control" name="lastdate" id="birthdate">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="form-label mt-4">In-charge / Coordinator</label>
+        <input type="text" class="form-control" name="incharge" id="exampleInputPassword1" placeholder="Incharge / Coordinator">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="form-label mt-4">No of Tickets / Seats</label>
+        <input type="number" class="form-control" name="ticketCount" id="exampleInputPassword1" placeholder="Eg . 150">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="form-label mt-4">Fee</label>
+        <input type="number" class="form-control" name="fee" id="exampleInputPassword1" placeholder="Eg . 150">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="form-label mt-4">Mobile Number</label>
+        <input type="text" class="form-control" name="upi" id="exampleInputPassword1" placeholder="upi Mobile number">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="form-label mt-4">Account Number</label>
+        <input type="text" class="form-control" name="accno" id="exampleInputPassword1" placeholder="acco no  ">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="form-label mt-4">IFSC code</label>
+        <input type="text" class="form-control" name="ifsc" id="exampleInputPassword1" placeholder="IFSC code ">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="form-label mt-4">No of Participants Allowed per Team</label>
+        <select class="form-select" name="noOfParti" id="exampleSelect1">
+          <option value="1" >1</option>
+          <option value="2" >2</option>
+          <option value="3" >3</option>
+          <option value="4" >4</option>
+          <option value="5" >5</option>
+        </select>
+      </div>
+      
+      
+      <button type="submit" class="btn btn-info">Create Event</button>
+      <br><br><br>
+    </fieldset>
+  </form>

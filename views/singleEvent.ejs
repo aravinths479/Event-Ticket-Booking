@@ -1,0 +1,51 @@
+<br><br>
+<h2><%= event.title %></h2>
+<br>
+
+<p id="desc">
+    <%= event.description %>
+</p>
+
+<br>
+<p><span><Strong>From &nbsp;&nbsp;:</Strong></span>  <%=  moment(event.from).format('DD/MM/YYYY')  %>   </p>
+<p><span><Strong>To  &nbsp;&nbsp; &nbsp;  &nbsp; :</Strong></span> <%=  moment(event.to).format('DD/MM/YYYY')  %>  </p>
+
+<br>
+
+<p><span><Strong>Venue &nbsp;&nbsp; &nbsp;   : &nbsp;</Strong></span> <%= event.venue %>  </p>
+
+<br>
+
+<p><span><Strong>Incharge / Coordinator &nbsp;&nbsp; &nbsp;  &nbsp; : &nbsp;</Strong></span> <%= event.incharge %>  </p>
+
+<br>
+
+<p><span><Strong>Last date for Registration &nbsp;&nbsp; &nbsp;  &nbsp; : &nbsp;</Strong></span> <%=  moment(event.lastdate).format('DD/MM/YYYY')  %> </p>
+
+<br>
+
+<p><span><Strong>Ticket Availablity  &nbsp;&nbsp; &nbsp;   : &nbsp;</Strong></span> <%= event.ticketCount %>  </p>
+<br>
+
+<p><span><Strong>Fee  &nbsp;&nbsp; &nbsp;   : &nbsp;</Strong></span> <%= event.fee %>  </p>
+
+<br>
+
+<a href="/event/registerEvent/<%= event._id %>" class="btn btn-outline-info">Register</a>
+
+<br><br>
+
+<script>
+    var text = document.getElementById("desc").value;
+    
+    function linkify(text) {
+        var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+        return text.replace(urlRegex, function(url) {
+            return '<a href="' + url + '">' + url + '</a>';
+        });
+        
+    }
+
+</script>
+
+

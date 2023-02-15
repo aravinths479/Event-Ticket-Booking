@@ -1,0 +1,41 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Event Name</th>
+      <th scope="col">No of Participants</th>
+      <th scope="col">Paid Amount</th>
+      <th scope="col">Transaction ID</th>
+      <th scope="col">Cancel Event</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% for(let i of events) { %>
+
+      <% if (i.canceled=="Not Cancelled") { %>
+
+            <tr class="table">
+              <td scope="row"> <%= i.email %> </td>
+              <td> <%= i.title %> </td>
+              <td> <%= i.noOfParti %> </td>
+              <td> <%= i.totamt %> </td>
+              <td> <%= i.transId %> </td>
+              <td>
+                <form action="/event/myEvents" method="post">
+                    <input type="hidden" name="id" value="<%= i.id %>">
+                    <button type="submit"  class="btn btn-outline-danger">Cancel</button>
+                </form>
+            </td>
+            </tr>
+
+      <% } %>     
+    
+    
+    <% } %>
+
+    
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+
+<br>
+<br>
+<h3 align="center">Events</h3>
+<br>
+
+<div style="padding: 0px 50px 0px 50px; ">
+
+    <% for(let i of events) { %>
+
+       <div class="card" style="transform: none;">
+        <div class="card-body" >
+          <h5 class="card-title"><%= i.title %></h5>
+          <p class="card-text"><%= i.description %></p>
+          <a href="/event/singleEvent/<%= i._id %>" class="btn btn-info">Visit 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+              </svg>
+          </a>
+        </div>
+      </div>
+      <br>
+
+      <% } %> 
+
+      
+      <br>
+</div>

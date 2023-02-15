@@ -1,0 +1,62 @@
+
+
+
+
+<h3>Complete Registration for <span id="title"><%= event.title %></span></h3>
+
+
+<br><br><br>
+<form action="/event/registerEvent/<%= id %>" method="post">
+    <fieldset>
+        
+        <input type="hidden" name="email" value="<%= email %>">
+        <input type="hidden" name="id" value="<%= id %>">
+        <input type="hidden" name="title" value="<%= event.title %>">
+
+        <h5>Fee per Person : <span ><%= event.fee %></span></h5>  
+      <input type="hidden" id="amt"  value="<%= event.fee%>">
+      <div class="form-group">
+        <label for="exampleSelect1" class="form-label mt-4">No. of Participants</label>
+        <select class="form-select" name="noOfParti" oninput="calc()" id="no">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <h5>Total amount to be paid : <span id="finalamt"><%= event.fee %></span></h5>
+      <input type="hidden" id="totamt" name="totamt" value="<%= event.fee %>">
+      <br><br>
+      <h5>UPI mobile number &nbsp; : &nbsp; <%= event.upi %>  </h5>
+      
+      <br><br>
+      <h5>Account NO :&nbsp; <%= event.accno %>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IFSC code : &nbsp;  <%= event.ifsc %></h5>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label mt-4">Transaction ID</label>
+        <input type="text" name="transId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required >
+      </div>
+      
+      
+      <button type="submit" class="btn btn-info">Submit</button>
+    </fieldset>
+  </form>
+
+
+  <script>
+    
+    const calc = () =>{
+        var amt = document.getElementById("amt").value;
+        amt = Number(amt);
+        var noOfParti = document.getElementById("no").value;
+        
+        noOfParti = Number(noOfParti);
+        var res = amt*noOfParti;
+        var finalamt = document.getElementById("finalamt").innerText = res;
+        var totamt = document.getElementById("totamt").value = res;
+
+    }
+  </script>
+
+
+

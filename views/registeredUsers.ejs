@@ -1,0 +1,156 @@
+
+<br>
+<h3>Users Information</h3>
+
+<br>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" data-bs-toggle="tab" href="#users" aria-selected="true" role="tab">Registered Users</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#canceled" aria-selected="false" role="tab" tabindex="-1">Cancelled Users</a>
+  </li>
+  
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active show" id="users" role="tabpanel">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Event Name</th>
+          <th scope="col">No of Participants</th>
+          <th scope="col">Paid Amount</th>
+          <th scope="col">Transaction ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <% for(let i of users) { %>
+  
+          <% if (i.canceled=="Not Cancelled") { %>
+  
+                <tr class="table">
+                  <td scope="row"> <%= i.email %> </td>
+                  <td> <%= i.title %> </td>
+                  <td> <%= i.noOfParti %> </td>
+                  <td> <%= i.totamt %> </td>
+                  <td> <%= i.transId %> </td>
+                </tr>
+  
+          <% } %>     
+        
+        
+        <% } %>
+  
+        
+      </tbody>
+  </table>
+  </div>
+  <div class="tab-pane fade" id="canceled" role="tabpanel">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Event Name</th>
+          <th scope="col">No of Participants</th>
+          <th scope="col">Pending Refund</th>
+          <th scope="col">Transaction ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <% for(let i of users) { %>
+    
+          <% if (i.canceled=="Canceled") { %>
+    
+                <tr class="table">
+                  <td scope="row"> <%= i.email %> </td>
+                  <td> <%= i.title %> </td>
+                  <td> <%= i.noOfParti %> </td>
+                  <td> <%= i.totamt %> </td>
+                  <td> <%= i.transId %> </td>
+                </tr>
+    
+          <% } %>     
+        
+        
+        <% } %>
+    
+        
+      </tbody>
+    </table>
+      </div>
+  
+</div>
+
+
+<!-- 
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Event Name</th>
+      <th scope="col">No of Participants</th>
+      <th scope="col">Paid Amount</th>
+      <th scope="col">Transaction ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% for(let i of users) { %>
+
+      <% if (i.canceled=="Not Canceled") { %>
+
+            <tr class="table">
+              <td scope="row"> <%= i.email %> </td>
+              <td> <%= i.title %> </td>
+              <td> <%= i.noOfParti %> </td>
+              <td> <%= i.totamt %> </td>
+              <td> <%= i.transId %> </td>
+            </tr>
+
+      <% } %>     
+    
+    
+    <% } %>
+
+    
+  </tbody>
+</table>
+
+<h3>Cancelled Users</h3>
+
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Event Name</th>
+    <th scope="col">No of Participants</th>
+    <th scope="col">Pending Refund</th>
+    <th scope="col">Transaction ID</th>
+  </tr>
+</thead>
+<tbody>
+  
+  <% for(let i of users) { %>
+
+    <% if (i.canceled=="Canceled") { %>
+
+          <tr class="table">
+            <td scope="row"> <%= i.email %> </td>
+            <td> <%= i.title %> </td>
+            <td> <%= i.noOfParti %> </td>
+            <td> <%= i.totamt %> </td>
+            <td> <%= i.transId %> </td>
+          </tr>
+
+    <% } %>     
+  
+  
+  <% } %>
+
+  
+</tbody>
+</table> -->
