@@ -107,7 +107,7 @@ exports.getMyevents = (req,res) =>{
             console.log(err);
         }
         else{
-            res.render("myEvents",{events:events , useraccess : req.user , useraccesslevel:req.user.isAdmin === true})
+            res.render("myevents",{events:events , useraccess : req.user , useraccesslevel:req.user.isAdmin === true})
         }
     })
 }
